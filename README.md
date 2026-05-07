@@ -36,6 +36,11 @@ A full-stack Security Information and Event Management (SIEM) platform that coll
 - **CSV / JSON export** — download filtered event sets for offline analysis
 - **Demo data included** — 7 days of realistic attack scenarios generated on first run so the dashboard is immediately useful
 
+## Standards & Framework Alignment
+
+- **NIST Cybersecurity Framework (CSF)** — Aligned detection, monitoring, and response workflows with NIST Cybersecurity Framework principles. The platform maps directly to the five CSF functions: *Identify* (asset and event inventory), *Protect* (audit policy monitoring), *Detect* (real-time log analysis and correlation rules), *Respond* (alert triage and status workflow), and *Recover* (audit trail and forensic investigation pivot).
+- **MITRE ATT&CK®** — Every detection rule and alert is tagged with a technique ID and tactic, enabling direct mapping to the ATT&CK knowledge base for threat intelligence and purple team exercises.
+
 ---
 
 ## Quick Start
