@@ -1,0 +1,42 @@
+# Database — contains your personal security events, do not commit
+siem.db
+*.db-shm
+*.db-wal
+
+# Watcher state — machine-specific bookmark
+.watcher_state.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+env/
+.env
+*.egg
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log

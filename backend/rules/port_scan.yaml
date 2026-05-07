@@ -1,0 +1,15 @@
+id: port_scan_001
+name: "Network Port Scan Detected"
+description: >
+  A single source IP has generated connection attempts to many different destination ports
+  within a short time window, indicating reconnaissance activity.
+mitre_technique: "T1046"
+mitre_tactic: "discovery"
+severity: medium
+risk_score: 60
+conditions:
+  - event_type: port_scan
+    min_count: 10
+    window_minutes: 5
+    group_by: source_ip
+alert_template: "Port scan detected from {source_ip}: {event_count} scan events in {window} minutes"

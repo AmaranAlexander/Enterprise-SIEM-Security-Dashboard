@@ -1,0 +1,15 @@
+id: priv_esc_001
+name: "Privilege Escalation Detected"
+description: >
+  A user account has gained elevated privileges or accessed administrative resources
+  outside of normal business hours or from an unusual source.
+mitre_technique: "T1078"
+mitre_tactic: "privilege-escalation"
+severity: critical
+risk_score: 90
+conditions:
+  - event_type: privilege_escalation
+    min_count: 5
+    window_minutes: 15
+    group_by: username
+alert_template: "Privilege escalation by user {username} on {hostname}"

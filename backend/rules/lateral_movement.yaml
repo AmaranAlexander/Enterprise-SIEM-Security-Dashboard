@@ -1,0 +1,16 @@
+id: lateral_movement_001
+name: "Lateral Movement Detected"
+description: >
+  Successful logins from a single source host to multiple different destination hosts
+  in a short window, suggesting lateral movement through the network after initial compromise.
+mitre_technique: "T1021"
+mitre_tactic: "lateral-movement"
+severity: critical
+risk_score: 95
+conditions:
+  - event_type: successful_login
+    min_count: 3
+    window_minutes: 30
+    group_by: source_ip
+    distinct_dest_min: 3
+alert_template: "Lateral movement from {source_ip}: successful logins to {dest_count} different hosts"

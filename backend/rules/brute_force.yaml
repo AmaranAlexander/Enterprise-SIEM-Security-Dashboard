@@ -1,0 +1,20 @@
+id: brute_force_001
+name: "Brute Force Attack Detected"
+description: >
+  Multiple failed login attempts followed by a successful login from the same source IP.
+  Indicates a successful brute force attack against user credentials.
+mitre_technique: "T1110"
+mitre_tactic: "credential-access"
+severity: high
+risk_score: 85
+conditions:
+  - event_type: failed_login
+    min_count: 5
+    window_minutes: 10
+    group_by: source_ip
+  - event_type: successful_login
+    min_count: 1
+    window_minutes: 10
+    group_by: source_ip
+    requires_same: source_ip
+alert_template: "Brute force attack from {source_ip}: {failed_count} failed attempts followed by successful login"
